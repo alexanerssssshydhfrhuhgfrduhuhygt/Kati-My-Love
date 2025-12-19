@@ -5,7 +5,7 @@
 }
 
 body{
-  font-family:'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background:#050018;
   color:white;
   height:100vh;
@@ -38,7 +38,7 @@ body{
   background:white;
   border-radius:50%;
   opacity:0.8;
-  animation:twinkle 4s infinite ease-in-out;
+  animation: twinkle 4s infinite ease-in-out;
 }
 
 @keyframes twinkle{
@@ -52,8 +52,8 @@ body{
   width:220px;
   height:200px;
   margin-top:-80px;
-  animation:latir 1.5s infinite ease-in-out;
-  filter:drop-shadow(0 0 10px #ff8fb3);
+  animation: latir 1.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 10px #ff8fb3);
 }
 
 .heart::before,
@@ -91,8 +91,8 @@ body{
   transform:translateX(-50%);
   width:80px;
   height:80px;
-  border-radius:50%;
   border:none;
+  border-radius:50%;
   background:linear-gradient(145deg,#ff7fa1,#ff5c7a);
   font-size:34px;
   color:white;
@@ -100,7 +100,7 @@ body{
   box-shadow:0 0 15px rgba(255,120,160,0.6);
 }
 
-/* 💬 Mensaje fijo */
+/* 💬 Texto base */
 .mensaje{
   position:absolute;
   bottom:30px;
@@ -118,7 +118,7 @@ body{
   border-radius:15px;
   font-weight:700;
   pointer-events:none;
-  animation:pop 2s ease-in-out forwards;
+  animation: pop 2s ease-in-out forwards;
 }
 
 @keyframes pop{
@@ -136,7 +136,7 @@ body{
   border-radius:50%;
   box-shadow:0 0 12px white;
   pointer-events:none;
-  animation:fly 3s linear forwards;
+  animation: fly 3s linear forwards;
 }
 
 @keyframes fly{
@@ -145,7 +145,7 @@ body{
     opacity:1;
   }
   to{
-    transform:translate(var(--x),var(--y));
+    transform:translate(var(--x), var(--y));
     opacity:0;
   }
 }
@@ -159,12 +159,12 @@ body{
   border-radius:50%;
   box-shadow:0 0 10px #ff9ad5;
   pointer-events:none;
-  animation:spark-fly 1s ease-out forwards;
+  animation: spark-fly 1s ease-out forwards;
 }
 
 @keyframes spark-fly{
   to{
-    transform:translate(var(--x),var(--y)) scale(0);
+    transform:translate(var(--x), var(--y)) scale(0);
     opacity:0;
   }
 }
