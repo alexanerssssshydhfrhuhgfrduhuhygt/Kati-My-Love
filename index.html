@@ -19,11 +19,12 @@
   <!-- 🎵 Música -->
   <div class="music-box">
     <p>🎶 Esta canción es para ti 💖</p>
-    <button class="music-btn" onclick="playSong()">▶ Reproducir</button>
+   <button class="music-btn" onclick="document.getElementById('musica').play()">
+  ▶ Reproducir
     <button class="music-btn" onclick="pauseSong()">⏸ Pausar</button>
   </div>
 
-  <audio id="musica" src="cancion.mp3"></audio>
+  <audio id="musica" src="cancion.mp3" preload="auto"></audio>
 
   <div class="mensaje">Para ti, mi Corazon Kati 💕✨</div>
 
