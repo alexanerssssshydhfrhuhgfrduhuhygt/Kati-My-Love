@@ -24,51 +24,59 @@
     <button class="music-btn" onclick="pauseSong()">⏸ Pausar</button>
   </div>
 
-  <audio id="musica" src="musica" preload="auto"></audio>
+  <audio id="musica" src="cancion.mp3" preload="auto"></audio>
 
   <div class="mensaje">Para ti, mi Corazon Kati 💕✨</div>
 
   <script>
-    /* ✨ Estrellas */
-    for(let i=0;i<220;i++){
-      const s=document.createElement('div');
-      s.className='star';
-      s.style.top=Math.random()*100+'vh';
-      s.style.left=Math.random()*100+'vw';
-      document.body.appendChild(s);
-    }
+/* ⭐ ESTRELLAS */
+for (let i = 0; i < 200; i++) {
+  const star = document.createElement("div");
+  star.className = "star";
+  star.style.top = Math.random() * 100 + "vh";
+  star.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(star);
+}
 
-    const mensajes=[
-      "Kati, eres lo más bonito que tengo ♥",
-      "Gracias por existir, preciosa 💖",
-      "Eres mi estrellita favorita 🌟",
-      "Te quiero demasiado, corazón 💕",
-      "Siempre contigo, Kati ✨💜",
-      "Kati te amo con toda mi alma 💕⭐",
-      "Por ti haría lo que fuera ❤️💫",
-      "Eres la más bonita que conozco 💖💌",
-      "Cada día me enamoras más 💗",
-      "Tu sonrisa ilumina mi mundo 😊💕",
-      "Eres una obra de arte preciosa 💘✨"
-    ];
+/* 🌠 COMETAS */
+setInterval(() => {
+  const comet = document.createElement("div");
+  comet.className = "comet";
+  comet.style.top = Math.random() * 40 + "vh";
+  comet.style.left = "-10vw";
+  document.body.appendChild(comet);
 
-    function mensajeRandom(){
-      const msg=document.createElement("div");
-      msg.className="mensaje-cute";
-      msg.innerText=mensajes[Math.floor(Math.random()*mensajes.length)];
-      msg.style.top=Math.random()*70+"vh";
-      msg.style.left=Math.random()*70+"vw";
-      document.body.appendChild(msg);
-      setTimeout(()=>msg.remove(),2000);
-    }
+  setTimeout(() => {
+    comet.remove();
+  }, 3000);
+}, 2000);
 
-    function playSong(){
-      document.getElementById("musica").play();
-    }
+/* 💖 MENSAJES */
+const mensajes = [
+  "Kati, eres lo más bonito que tengo ♥",
+  "Gracias por existir, preciosa 💖",
+  "Eres mi estrellita favorita 🌟",
+  "Te quiero demasiado, corazón 💕",
+  "Siempre contigo ✨"
+];
 
-    function pauseSong(){
-      document.getElementById("musica").pause();
-    }
+function mensajeRandom() {
+  const msg = document.createElement("div");
+  msg.className = "mensaje-cute";
+  msg.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+  msg.style.top = Math.random() * 60 + "vh";
+  msg.style.left = Math.random() * 60 + "vw";
+  document.body.appendChild(msg);
+
+  setTimeout(() => msg.remove(), 2000);
+
+  // 🎵 activar música con el mismo clic
+  const audio = document.getElementById("musica");
+  if (audio) {
+    audio.play().catch(() => {});
+  }
+}
+
   </script>
 
 </body>

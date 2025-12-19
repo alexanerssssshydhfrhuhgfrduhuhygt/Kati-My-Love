@@ -158,7 +158,6 @@ body{
   font-weight:600;
 }
 
-/* 🌠 Cometas */
 .comet{
   position:fixed;
   width:6px;
@@ -171,11 +170,11 @@ body{
 
 @keyframes fly{
   from{
-    transform:translate(-10vw, 0);
+    transform:translate(0,0);
     opacity:1;
   }
   to{
-    transform:translate(120vw, 80vh);
+    transform:translate(120vw,80vh);
     opacity:0;
   }
 }
