@@ -38,18 +38,22 @@ for (let i = 0; i < 200; i++) {
   document.body.appendChild(star);
 }
 
-/* 🌠 COMETAS */
 setInterval(() => {
   const comet = document.createElement("div");
   comet.className = "comet";
-  comet.style.top = Math.random() * 40 + "vh";
-  comet.style.left = "-10vw";
+
+  // posición inicial aleatoria
+  comet.style.top = Math.random() * 60 + "vh";
+  comet.style.left = Math.random() * -20 + "vw";
+
+  // trayectoria aleatoria 
+  comet.style.setProperty('--x', Math.random() * 120 + 'vw');
+  comet.style.setProperty('--y', Math.random() * 80 + 'vh');
+
   document.body.appendChild(comet);
 
-  setTimeout(() => {
-    comet.remove();
-  }, 3000);
-}, 2000);
+  setTimeout(() => comet.remove(), 3000);
+}, 600);
 
 /* 💖 MENSAJES */
 const mensajes = [

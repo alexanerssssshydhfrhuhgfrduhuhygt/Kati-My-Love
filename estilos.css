@@ -160,13 +160,14 @@ body{
 
 .comet{
   position: fixed;
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   background: white;
   border-radius: 50%;
   box-shadow: 0 0 12px white;
-  opacity: 0.8;
+  opacity: 0.9;
   animation: fly 3s linear forwards;
+  pointer-events: none;
 }
 
 @keyframes fly{
