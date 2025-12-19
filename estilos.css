@@ -159,22 +159,23 @@ body{
 }
 
 .comet{
-  position:fixed;
-  width:6px;
-  height:6px;
-  background:white;
-  border-radius:50%;
-  box-shadow:0 0 12px white;
-  animation:fly 3s linear forwards;
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 12px white;
+  opacity: 0.8;
+  animation: fly 3s linear forwards;
 }
 
 @keyframes fly{
   from{
-    transform:translate(0,0);
-    opacity:1;
+    transform: translate(0,0);
+    opacity: 1;
   }
   to{
-    transform:translate(120vw,80vh);
-    opacity:0;
+    transform: translate(var(--x), var(--y));
+    opacity: 0;
   }
 }
