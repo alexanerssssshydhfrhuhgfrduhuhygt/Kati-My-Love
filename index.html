@@ -19,12 +19,15 @@
   <!-- 🎵 Música -->
   <div class="music-box">
     <p>🎶 Esta canción es para ti 💖</p>
-   <button class="music-btn" onclick="document.getElementById('musica').play()">
+   <button class="music-btn" id="playMusic">
   ▶ Reproducir
+</button>
     <button class="music-btn" onclick="pauseSong()">⏸ Pausar</button>
   </div>
 
-  <audio id="musica" src="cancion.mp3" preload="auto"></audio>
+  <audio id="musica" preload="auto">
+  <source src="cancion.mp3" type="audio/mpeg">
+</audio>
 
   <div class="mensaje">Para ti, mi Corazon Kati 💕✨</div>
 
@@ -78,6 +81,14 @@ function mensajeRandom() {
     audio.play().catch(() => {});
   }
 }
+
+document.getElementById("playMusic").addEventListener("click", () => {
+  const audio = document.getElementById("musica");
+  audio.volume = 0.8;
+  audio.play().catch(e => {
+    console.log("El navegador bloqueó el audio:", e);
+  });
+});
 
   </script>
 
