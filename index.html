@@ -5,91 +5,226 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Para Kati mi noviesita linda ♥</title>
 
-  <!-- Conectamos el CSS -->
-  <link rel="stylesheet" href="estilos.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#050018;
+      color:white;
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    /* 🌙 Luna */
+    .luna{
+      position:absolute;
+      top:40px;left:40px;
+      width:140px;height:140px;
+      border-radius:50%;
+      background:radial-gradient(circle,#f2f2ff,#cfcfff,#9b9bd9);
+      box-shadow:0 0 15px rgba(180,180,255,0.6),
+                 0 0 30px rgba(255,255,255,0.4);
+    }
+
+    /* ✨ Estrellas */
+    .star{
+      position:absolute;
+      width:2px;height:2px;
+      background:white;
+      border-radius:50%;
+      opacity:0.8;
+      animation:twinkle 4s infinite ease-in-out;
+    }
+
+    @keyframes twinkle{
+      0%,100%{opacity:0.2}
+      50%{opacity:1}
+    }
+
+    /* ❤️ Corazón */
+    .heart{
+      position:relative;
+      width:220px;
+      height:200px;
+      animation:latir 1.5s infinite ease-in-out;
+      filter:drop-shadow(0 0 10px #ff8fb3);
+      margin-top:-80px;
+    }
+
+    .heart::before,
+    .heart::after{
+      content:"";
+      position:absolute;
+      width:120px;height:180px;
+      background:#ff5c7a;
+      border-radius:100px 100px 0 0;
+    }
+
+    .heart::before{
+      left:110px;
+      transform:rotate(-45deg);
+      transform-origin:0 100%;
+    }
+
+    .heart::after{
+      left:-10px;
+      transform:rotate(45deg);
+      transform-origin:100% 100%;
+    }
+
+    @keyframes latir{
+      0%,100%{transform:scale(1)}
+      50%{transform:scale(1.12)}
+    }
+
+    /* 💕 Botón */
+    .btn-heart{
+      position:absolute;
+      bottom:160px;
+      left:50%;
+      transform:translateX(-50%);
+      width:80px;height:80px;
+      background:linear-gradient(145deg,#ff7fa1,#ff5c7a);
+      border:none;border-radius:50%;
+      cursor:pointer;
+      font-size:34px;
+      color:white;
+      box-shadow:0 0 15px rgba(255,120,160,0.6);
+    }
+
+    /* 💬 Mensajes */
+    .mensaje{
+      position:absolute;
+      bottom:30px;
+      width:100%;
+      text-align:center;
+      font-size:22px;
+      font-weight:600;
+    }
+
+    .mensaje-cute{
+      position:absolute;
+      background:#b38bff;
+      padding:12px 20px;
+      border-radius:15px;
+      font-weight:700;
+      animation:pop 2s ease-in-out forwards;
+      pointer-events:none;
+    }
+
+    @keyframes pop{
+      0%{opacity:0;transform:scale(0.3)}
+      20%{opacity:1;transform:scale(1.05)}
+      100%{opacity:0;transform:translateY(-40px)}
+    }
+
+    /* 🌠 Cometas */
+    .comet{
+      position: fixed;
+      width:5px;
+      height:5px;
+      background:white;
+      border-radius:50%;
+      box-shadow:0 0 12px white;
+      animation: fly 3s linear forwards;
+      pointer-events:none;
+    }
+
+    @keyframes fly{
+      from{transform:translate(0,0);opacity:1}
+      to{transform:translate(var(--x),var(--y));opacity:0}
+    }
+
+    /* ✨ Chispas (ESPACIO) */
+    .spark{
+      position: fixed;
+      width:8px;
+      height:8px;
+      background:#ff9ad5;
+      border-radius:50%;
+      box-shadow:0 0 10px #ff9ad5;
+      pointer-events:none;
+      animation:spark-fly 1s ease-out forwards;
+    }
+
+    @keyframes spark-fly{
+      to{
+        transform:translate(var(--x),var(--y)) scale(0);
+        opacity:0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="luna"></div>
-
   <div class="heart"></div>
   <button class="btn-heart" onclick="mensajeRandom()">♥</button>
 
-  <!-- 🎵 Música -->
-  <div class="music-box">
-    <p>🎶 Esta canción es para ti 💖</p>
-   <button class="music-btn" id="playMusic">
-  ▶ Reproducir
-</button>
-    <button class="music-btn" onclick="pauseSong()">⏸ Pausar</button>
-  </div>
-
-  <audio id="musica" preload="auto">
-  <source src="cancion.mp3" type="audio/mpeg">
-</audio>
-
-  <div class="mensaje">Para ti, mi Corazon Kati 💕✨</div>
+  <div class="mensaje">Para ti, mi corazón Kati 💕✨</div>
 
   <script>
-/* ⭐ ESTRELLAS */
-for (let i = 0; i < 200; i++) {
-  const star = document.createElement("div");
-  star.className = "star";
-  star.style.top = Math.random() * 100 + "vh";
-  star.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(star);
-}
+    /* ⭐ Estrellas */
+    for(let i=0;i<200;i++){
+      const s=document.createElement("div");
+      s.className="star";
+      s.style.top=Math.random()*100+"vh";
+      s.style.left=Math.random()*100+"vw";
+      document.body.appendChild(s);
+    }
 
-setInterval(() => {
-  const comet = document.createElement("div");
-  comet.className = "comet";
+    /* 💬 Mensajes */
+    const mensajes=[
+      "Kati, eres lo más bonito que tengo ♥",
+      "Gracias por existir, preciosa 💖",
+      "Eres mi estrellita favorita 🌟",
+      "Te quiero demasiado 💕",
+      "Siempre contigo ✨💜"
+    ];
 
-  comet.style.top = Math.random() * 60 + "vh";
-  comet.style.left = Math.random() * -20 + "vw";
- 
-  comet.style.setProperty('--x', '120vw');
-comet.style.setProperty('--y', '80vh');
+    function mensajeRandom(){
+      const msg=document.createElement("div");
+      msg.className="mensaje-cute";
+      msg.innerText=mensajes[Math.floor(Math.random()*mensajes.length)];
+      msg.style.top=Math.random()*70+"vh";
+      msg.style.left=Math.random()*70+"vw";
+      document.body.appendChild(msg);
+      setTimeout(()=>msg.remove(),2000);
+    }
 
-  document.body.appendChild(comet);
+    /* 🌠 Cometas */
+    setInterval(()=>{
+      const comet=document.createElement("div");
+      comet.className="comet";
+      comet.style.top=Math.random()*60+"vh";
+      comet.style.left=Math.random()*-20+"vw";
+      comet.style.setProperty("--x",Math.random()*120+"vw");
+      comet.style.setProperty("--y",Math.random()*80+"vh");
+      document.body.appendChild(comet);
+      setTimeout(()=>comet.remove(),3000);
+    },600);
 
-  setTimeout(() => comet.remove(), 3000);
-}, 600);
-
-/* 💖 MENSAJES */
-const mensajes = [
-  "Kati, eres lo más bonito que tengo ♥",
-  "Gracias por existir, preciosa 💖",
-  "Eres mi estrellita favorita 🌟",
-  "Te quiero demasiado, corazón 💕",
-  "Siempre contigo ✨"
-];
-
-function mensajeRandom() {
-  const msg = document.createElement("div");
-  msg.className = "mensaje-cute";
-  msg.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
-  msg.style.top = Math.random() * 60 + "vh";
-  msg.style.left = Math.random() * 60 + "vw";
-  document.body.appendChild(msg);
-
-  setTimeout(() => msg.remove(), 2000);
-
-  // 🎵 activar música con el mismo clic
-  const audio = document.getElementById("musica");
-  if (audio) {
-    audio.play().catch(() => {});
-  }
-}
-
-document.getElementById("playMusic").addEventListener("click", () => {
-  const audio = document.getElementById("musica");
-  audio.volume = 0.8;
-  audio.play().catch(e => {
-    console.log("El navegador bloqueó el audio:", e);
-  });
-});
-
+    /* ✨ ESPACIO = MAGIA */
+    document.addEventListener("keydown",e=>{
+      if(e.code==="Space"){
+        for(let i=0;i<20;i++){
+          const sp=document.createElement("div");
+          sp.className="spark";
+          sp.style.left="50vw";
+          sp.style.top="50vh";
+          sp.style.setProperty("--x",(Math.random()*200-100)+"px");
+          sp.style.setProperty("--y",(Math.random()*200-100)+"px");
+          document.body.appendChild(sp);
+          setTimeout(()=>sp.remove(),1000);
+        }
+      }
+    });
   </script>
 
 </body>
