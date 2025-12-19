@@ -106,32 +106,6 @@ body{
   transform:translateX(-50%) scale(1.15);
 }
 
-/* 🎵 Música */
-.music-box{
-  position:absolute;
-  bottom:60px;
-  background:rgba(255,255,255,0.08);
-  padding:14px 22px;
-  border-radius:18px;
-  text-align:center;
-}
-
-.music-box p{
-  margin-bottom:10px;
-  font-weight:600;
-  color:#ffd6f0;
-}
-
-.music-btn{
-  background:white;
-  color:#050018;
-  border:none;
-  padding:8px 14px;
-  border-radius:10px;
-  cursor:pointer;
-  margin:0 5px;
-}
-
 /* 💖 Mensajes */
 .mensaje-cute{
   position:absolute;
