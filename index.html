@@ -42,13 +42,11 @@ setInterval(() => {
   const comet = document.createElement("div");
   comet.className = "comet";
 
-  // posición inicial aleatoria
   comet.style.top = Math.random() * 60 + "vh";
   comet.style.left = Math.random() * -20 + "vw";
-
-  // trayectoria aleatoria 
-  comet.style.setProperty('--x', Math.random() * 120 + 'vw');
-  comet.style.setProperty('--y', Math.random() * 80 + 'vh');
+ 
+  comet.style.setProperty('--x', '120vw');
+comet.style.setProperty('--y', '80vh');
 
   document.body.appendChild(comet);
 
