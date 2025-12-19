@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Para Kati mi noviesita linda ♥</title>
 
   <style>
@@ -23,26 +23,26 @@
     /* 🌙 Luna */
     .luna{
       position:absolute;
-      top:40px;left:40px;
-      width:140px;height:140px;
+      top:40px; left:40px;
+      width:140px; height:140px;
       border-radius:50%;
       background:radial-gradient(circle,#f2f2ff,#cfcfff,#9b9bd9);
-      box-shadow:0 0 15px rgba(180,180,255,0.6),
-                 0 0 30px rgba(255,255,255,0.4);
+      box-shadow:0 0 15px rgba(180,180,255,.6),
+                 0 0 30px rgba(255,255,255,.4);
     }
 
-    /* ✨ Estrellas */
+    /* ⭐ Estrellas */
     .star{
       position:absolute;
-      width:2px;height:2px;
+      width:2px; height:2px;
       background:white;
       border-radius:50%;
-      opacity:0.8;
+      opacity:.8;
       animation:twinkle 4s infinite ease-in-out;
     }
 
     @keyframes twinkle{
-      0%,100%{opacity:0.2}
+      0%,100%{opacity:.2}
       50%{opacity:1}
     }
 
@@ -51,16 +51,17 @@
       position:relative;
       width:220px;
       height:200px;
+      margin-top:-80px;
       animation:latir 1.5s infinite ease-in-out;
       filter:drop-shadow(0 0 10px #ff8fb3);
-      margin-top:-80px;
     }
 
     .heart::before,
     .heart::after{
       content:"";
       position:absolute;
-      width:120px;height:180px;
+      width:120px;
+      height:180px;
       background:#ff5c7a;
       border-radius:100px 100px 0 0;
     }
@@ -88,16 +89,18 @@
       bottom:160px;
       left:50%;
       transform:translateX(-50%);
-      width:80px;height:80px;
+      width:80px;
+      height:80px;
+      border:none;
+      border-radius:50%;
       background:linear-gradient(145deg,#ff7fa1,#ff5c7a);
-      border:none;border-radius:50%;
-      cursor:pointer;
       font-size:34px;
       color:white;
-      box-shadow:0 0 15px rgba(255,120,160,0.6);
+      cursor:pointer;
+      box-shadow:0 0 15px rgba(255,120,160,.6);
     }
 
-    /* 💬 Mensajes */
+    /* 💬 Mensaje base */
     .mensaje{
       position:absolute;
       bottom:30px;
@@ -107,32 +110,33 @@
       font-weight:600;
     }
 
+    /* 💌 Mensajes flotantes */
     .mensaje-cute{
       position:absolute;
       background:#b38bff;
       padding:12px 20px;
       border-radius:15px;
       font-weight:700;
-      animation:pop 2s ease-in-out forwards;
       pointer-events:none;
+      animation:pop 2s ease-in-out forwards;
     }
 
     @keyframes pop{
-      0%{opacity:0;transform:scale(0.3)}
+      0%{opacity:0;transform:scale(.3)}
       20%{opacity:1;transform:scale(1.05)}
       100%{opacity:0;transform:translateY(-40px)}
     }
 
     /* 🌠 Cometas */
     .comet{
-      position: fixed;
+      position:fixed;
       width:5px;
       height:5px;
       background:white;
       border-radius:50%;
       box-shadow:0 0 12px white;
-      animation: fly 3s linear forwards;
       pointer-events:none;
+      animation:fly 3s linear forwards;
     }
 
     @keyframes fly{
@@ -142,7 +146,7 @@
 
     /* ✨ Chispas (ESPACIO) */
     .spark{
-      position: fixed;
+      position:fixed;
       width:8px;
       height:8px;
       background:#ff9ad5;
@@ -171,7 +175,7 @@
 
   <script>
     /* ⭐ Estrellas */
-    for(let i=0;i<200;i++){
+    for(let i=0;i<220;i++){
       const s=document.createElement("div");
       s.className="star";
       s.style.top=Math.random()*100+"vh";
@@ -179,26 +183,24 @@
       document.body.appendChild(s);
     }
 
-    /* 💬 Mensajes */
+    /* 💌 FRASES POÉTICAS */
     const mensajes=[
-      Kati, eres magia… y aparte guapísima ✨😌
-      Kati, además de preciosa, haces que todo se sienta en casa 💖
-      Tu belleza no hace ruido, pero ilumina todo a tu alrededor ✨
-      No sabía qué era la felicidad… hasta que llegó tu sonrisa tan hermosa 💕
-      Eres mi casualidad favorita y la más bonita que me pudo pasar 💫
-      Con solo pensarte y recordar lo preciosa que eres, mi día mejora 🌷
-      Tus abrazos son mi lugar seguro, y tu mirada mi calma 🫶
-      Amarte es un poema que escribo sin darme cuenta, todos los días 💘
-      Tu forma de existir es tan bonita que me roba sonrisas sin pedir permiso 🌙
-      Mi futuro se dibuja más bonito cuando tu nombre aparece en él 💞
-      Kati, eres magia que se ve y se siente ✨
-      Todo es más bonito contigo, sobre todo tú 🌙💖
-      Me enamoro de ti un poquito más cada día, preciosa 💕
-      Eres mi pensamiento favorito antes de dormir y la luz de mis sueños 🌌
-      Gracias por ser tan tú, tan bonita y tan real 🌸
-      Quererte es elegir lo bonito incluso en los días simples 💖
-      Si tuviera que describirte, diría que eres belleza hecha calma 💘     
-
+      "Kati, además de preciosa, haces que todo se sienta en casa 💖",
+      "Tu belleza no hace ruido, pero ilumina todo a tu alrededor ✨",
+      "No sabía qué era la felicidad… hasta que llegó tu sonrisa tan hermosa 💕",
+      "Eres mi casualidad favorita y la más bonita que me pudo pasar 💫",
+      "Con solo pensarte y recordar lo preciosa que eres, mi día mejora 🌷",
+      "Tus abrazos son mi lugar seguro, y tu mirada mi calma 🫶",
+      "Amarte es un poema que escribo sin darme cuenta, todos los días 💘",
+      "Tu forma de existir es tan bonita que me roba sonrisas sin pedir permiso 🌙",
+      "Mi futuro se dibuja más bonito cuando tu nombre aparece en él 💞",
+      "Kati, eres magia que se ve y se siente ✨",
+      "Todo es más bonito contigo, sobre todo tú 🌙💖",
+      "Me enamoro de ti un poquito más cada día, preciosa 💕",
+      "Eres mi pensamiento favorito antes de dormir y la luz de mis sueños 🌌",
+      "Gracias por ser tan tú, tan bonita y tan real 🌸",
+      "Quererte es elegir lo bonito incluso en los días simples 💖",
+      "Si tuviera que describirte, diría que eres belleza hecha calma 💘"
     ];
 
     function mensajeRandom(){
@@ -213,14 +215,14 @@
 
     /* 🌠 Cometas */
     setInterval(()=>{
-      const comet=document.createElement("div");
-      comet.className="comet";
-      comet.style.top=Math.random()*60+"vh";
-      comet.style.left=Math.random()*-20+"vw";
-      comet.style.setProperty("--x",Math.random()*120+"vw");
-      comet.style.setProperty("--y",Math.random()*80+"vh");
-      document.body.appendChild(comet);
-      setTimeout(()=>comet.remove(),3000);
+      const c=document.createElement("div");
+      c.className="comet";
+      c.style.top=Math.random()*60+"vh";
+      c.style.left=Math.random()*-20+"vw";
+      c.style.setProperty("--x",Math.random()*120+"vw");
+      c.style.setProperty("--y",Math.random()*80+"vh");
+      document.body.appendChild(c);
+      setTimeout(()=>c.remove(),3000);
     },600);
 
     /* ✨ ESPACIO = MAGIA */
